@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True, eq=False)
+@dataclass
 class ApplicationException:
     @property
     def message(self) -> str:

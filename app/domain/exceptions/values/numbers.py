@@ -3,21 +3,21 @@ from dataclasses import dataclass
 from app.domain.exceptions.values.base import BaseValueObjectException
 
 
-@dataclass(frozen=True, eq=False)
+@dataclass
 class NumberValueException(BaseValueObjectException):
     @property
     def message(self) -> str:
         return "Ошибка численного значения!"
 
 
-@dataclass(frozen=True, eq=False)
+@dataclass
 class PositiveIntLTZeroException(NumberValueException):
     @property
     def message(self) -> str:
         return "Неотрицательные число не может быть меньше нуля!"
 
 
-@dataclass(frozen=True, eq=False)
+@dataclass
 class PriceLEZeroException(NumberValueException):
     @property
     def message(self) -> str:
