@@ -6,7 +6,7 @@ from app.domain.values.base import BaseValueObject
 
 
 @dataclass(frozen=True)
-class Text[T:str](BaseValueObject):
+class Text(BaseValueObject[str]):
     def validate(self) -> None:
         if len(self.value) == 0:
             raise EmptyTextException
@@ -15,7 +15,7 @@ class Text[T:str](BaseValueObject):
 
 
 @dataclass(frozen=True)
-class Name[T:str](BaseValueObject):
+class Name(BaseValueObject[str]):
     def validate(self) -> None:
         if len(self.value) == 0:
             raise EmptyNameException

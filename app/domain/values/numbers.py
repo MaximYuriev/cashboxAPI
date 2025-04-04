@@ -6,14 +6,14 @@ from app.domain.values.base import BaseValueObject
 
 
 @dataclass(frozen=True)
-class PositiveInt[T:int](BaseValueObject):
+class PositiveInt(BaseValueObject[int]):
     def validate(self) -> None:
         if self.value < 0:
             raise PositiveIntLTZeroException
 
 
 @dataclass(frozen=True)
-class Price[T:Decimal](BaseValueObject):
+class Price(BaseValueObject[Decimal]):
     def validate(self) -> None:
         if self.value <= 0:
             raise PriceLEZeroException
