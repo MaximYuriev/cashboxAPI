@@ -1,3 +1,4 @@
+import datetime
 import uuid
 from dataclasses import dataclass, field
 
@@ -12,3 +13,5 @@ class Product:
     description: Text
     quantity: PositiveInt
     price: Price
+    created_at: datetime.datetime = field(default_factory=datetime.datetime.now, kw_only=True)
+    updated_at: datetime.datetime = field(default_factory=datetime.datetime.now, kw_only=True)
