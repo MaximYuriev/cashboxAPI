@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from app.domain.exceptions.base import ApplicationException
 
 
-@dataclass
+@dataclass(frozen=True, eq=False)
 class BaseValueObjectException(ApplicationException):
     @property
     def message(self) -> str:
