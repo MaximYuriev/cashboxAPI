@@ -11,7 +11,7 @@ from app.domain.values.texts import Text, Name
 class Product(BaseEntity):
     product_id: uuid.UUID = field(default_factory=uuid.uuid4, kw_only=True)
     name: Name
-    description: Text
-    category: ProductCategory
-    quantity: NonNegativeInt
-    price: Price
+    description: Text = field(compare=False)
+    category: ProductCategory = field(compare=False)
+    quantity: NonNegativeInt = field(compare=False)
+    price: Price = field(compare=False)

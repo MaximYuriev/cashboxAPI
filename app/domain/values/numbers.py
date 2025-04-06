@@ -17,3 +17,9 @@ class Price(BaseValueObject[Decimal]):
     def validate(self) -> None:
         if self.value <= 0:
             raise PriceLEZeroException
+
+@dataclass(frozen=True)
+class PositiveInt(BaseValueObject[int]):
+    def validate(self) -> None:
+        if self.value <= 0:
+            raise PositiveIntLEZeroException

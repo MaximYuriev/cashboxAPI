@@ -22,3 +22,10 @@ class PriceLEZeroException(NumberValueException):
     @property
     def message(self) -> str:
         return "Цена на товар должна быть больше нуля!"
+
+
+@dataclass(frozen=True, eq=False)
+class PositiveIntLEZeroException(NumberValueException):
+    @property
+    def message(self) -> str:
+        return "Положительное число должно быть больше нуля!"
