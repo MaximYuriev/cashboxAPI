@@ -11,7 +11,7 @@ class NumberValueException(BaseValueObjectException):
 
 
 @dataclass(frozen=True, eq=False)
-class PositiveIntLTZeroException(NumberValueException):
+class NonNegativeIntLTZeroException(NumberValueException):
     @property
     def message(self) -> str:
         return "Неотрицательные число не может быть меньше нуля!"
