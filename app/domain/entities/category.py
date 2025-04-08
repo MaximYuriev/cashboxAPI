@@ -10,3 +10,7 @@ class ProductCategory(BaseEntity):
     category_id: uuid.UUID = field(default_factory=uuid.uuid4, kw_only=True)
     name: Name
     description: Text
+
+    @classmethod
+    def create_category(cls, name: Name, description: Text) -> 'ProductCategory':
+        return cls(name=name, description=description)
