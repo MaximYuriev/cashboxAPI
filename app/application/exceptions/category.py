@@ -9,4 +9,4 @@ class ProductCategoryAlreadyExistException(ProductCategoryException):
 
     @property
     def message(self) -> str:
-        return f"Товар с таким именем '{self.name}' уже существует!"
+        return f"Категория товара с таким названием '{self.name}' уже существует!"
