@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from app.application.commands.category import AddProductCategoryCommand
 from app.application.exceptions.category import ProductCategoryAlreadyExistException
 from app.application.handlers.commands.base import BaseCommandHandler
-from app.application.interfaces.repository.category import ProductCategoryRepository
+from app.application.interfaces.repositories.category import ProductCategoryRepository
 from app.domain.entities.category import ProductCategory
 from app.domain.values.texts import Name, Text
 
