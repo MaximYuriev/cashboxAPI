@@ -18,7 +18,7 @@ class AddProductCategoryHandler(BaseCommandHandler):
 
         name = Name(command.name)
         description = Text(command.description)
-        product_category = ProductCategory.create_category(
+        product_category = ProductCategory(
             name=name,
             description=description
         )
